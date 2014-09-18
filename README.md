@@ -25,3 +25,14 @@ const A operator++(int)
     ++(*this);    // Implemented by prefix increment
     return A(tmp);
 }
+
+模板的特化和偏特化
+特化
+template < >
+class stack<bool> { //…// };
+
+偏特化
+template <class T, class Allocator>
+class vector { // … // };
+template <class Allocator>
+class vector<bool, Allocator> { //…//};
