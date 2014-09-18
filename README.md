@@ -9,3 +9,19 @@ cplusplus_attention
 非类型模板形参
 语法：template<int a> class B {};
 非类型模板形参只能是整型、指针、引用，实参必须是一个常量表达式
+
+自增操作符++重载
+// ++i
+A& operator++()
+{
+  ++m_i;
+  return *this;
+}
+
+// i++
+const A operator++(int)
+{
+    A tmp = *this;
+    ++(*this);    // Implemented by prefix increment
+    return A(tmp);
+}
